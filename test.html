@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!--<link rel="stylesheet" href="/carousel.css">
+<link rel="stylesheet" href="/iconshake.css">
+<link rel="stylesheet" href="/navbar.css">
+<link rel="stylesheet" href="/line.css">
+<link rel="stylesheet" href="/card.css">-->
+<!--for icons-->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<!--for fonts-->
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<!--for bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+  <style>
+     .card-flip > div {
+    backface-visibility: hidden;
+    transition: transform .6s;
+    transition-timing-function: linear;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+  }
+  .ca{
+    padding:0px;
+    text-align:center;
+  }
+
+  .card-front {
+    transform: rotateY(0deg);
+    color: #e65c00;
+    background-color: #fff;
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-flip:hover .card-front {
+    transform: rotateY(-180deg);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+  }
+
+  .card-flip:hover .card-back {
+    transform: rotateY(0deg);
+    transform: scale(1.1);
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  .c{
+  background-color: #ffb380;
+}
+
+.card{
+  margin: 5%;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+.line {
+    width: 100px;
+    height: 2px;
+    background:   #b34700;
+    position: fixed;
+    top: 86%;
+}
+
+#line_r{
+  -webkit-animation: line_r_animation 3s infinite;
+  animation: line_r_animation 3s infinite;
+}
+
+#line_l{
+  -webkit-animation: line_l_animation 3s infinite;
+  animation: line_l_animation 3s infinite;
+}
+
+
+
+@keyframes line_r_animation {
+    0%   {left: calc(2% + 50px); width: 0px;}
+    35%   {left: calc(2% + 0px); width: 50px;}
+    70%   {left: calc(2% + 0px); width: 0px;}
+    100%   {left: calc(2% + 0px); width: 0px;}
+}
+
+@keyframes line_l_animation {
+    0%   {right: calc(2% + 50px); width: 0px;}
+    35%   {right: calc(2% + 0px); width: 50px;}
+    70%   {right: calc(2% + 0px); width: 0px;}
+    100%   {right: calc(2% + 0px); width: 0px;}
+}
+
+
+
+
+.navbar{
+  border-radius: 10px;
+}
+
+.smart-scroll{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+.scrolled-down{
+   transform:translateY(-100%); transition: all 0.3s ease-in-out;
+}
+.scrolled-up{
+   transform:translateY(0); transition: all 0.3s ease-in-out;
+}
+
+
+
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+.carousel{
+interval: 2s;
+
+float:center;
+background-color: #ffb380;
+}
+
+
+
+
+
+
+
+
+
+.fa {
+
+  margin-left: 8%;
+}
+
+
+.fa:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-.9px, 0, -.50px);
+  }
+  20%, 80% {
+    transform: translate3d(.9px, 0, .50px);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-.9px,0, -.50px);
+  }
+  40%, 60% {
+    transform: translate3d(.9px, 0, .50px);
+  }
+}
+
+h1{
+  font-family: Lobster;
+}
+
+</style>
+ </head>
+<body data-spy="scroll" data-target="#navbar" data-target="#collapsibleNavbar">
+  <div class="container">
+<!--nav bar section-->
+<nav class="navbar smart-scroll navbar-expand-md bg-dark navbar-dark" id="navbar">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Anveshak</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" id="toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#team">Our Team</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#rover">Our Rovers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Support Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+<!--rover carosel-->
+<h1><b> {{id.name}}, {{id.year}}</b></h1><br>
+ <div id="rover" class="card c">
+          <div class="card-body">
+     {{id.description}}
+      </div>
+          </div><br>
+          <div class="row">
+            <div class="col-lg-3 col-md-2 col-sm-2 col-xs-1">
+
+            </div>
+        <div class="col-lg-6 col-md-8 col-sm-8 col-xs-10">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner ">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="1.jpg" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="2.jpg" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="3.jpg" alt="Third slide">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-1">
+        </div>
+      </div>
+      <br>
+<hr>
+            <!--rover2-->
+
+            <h1><b> {{id.name}}, {{id.year}}</b></h1><br>
+             <div class="card c">
+                      <div class="card-body">
+                 {{id.description}}
+                  </div>
+                      </div><br>
+                      <div class="row">
+                        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-1">
+
+                        </div>
+                    <div class="col-lg-6 col-md-8 col-sm-8 col-xs-10">
+                      <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+                          <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+                          <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner ">
+                          <div class="carousel-item active">
+                            <img class="d-block w-100" src="1.jpg" alt="First slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="2.jpg" alt="Second slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="3.jpg" alt="Third slide">
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+
+                    </div>
+                    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-1">
+                    </div>
+                        </div>
+<br>
+<hr>
+
+<!--rover3-->
+
+<h1><b> {{id.name}}, {{id.year}}</b></h1><br>
+ <div class="card c">
+          <div class="card-body">
+     {{id.description}}
+      </div>
+          </div><br>
+          <div class="row">
+            <div class="col-lg-3 col-md-2 col-sm-2 col-xs-1">
+
+            </div>
+        <div class="col-lg-6 col-md-8 col-sm-8 col-xs-10">
+          <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators3" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner ">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="1.jpg" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="2.jpg" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="3.jpg" alt="Third slide">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-1">
+        </div>
+            </div>
+<br>
+<hr>
+
+
+
+
+
+
+<!--card section-->
+
+  <!-- <div class="container">-->
+       <h1 id="team"><b>OUR TEAM</b></h1><br>
+       <div class="card c">
+           <div class="card-body">
+       Whatever we wanna brag about our team in so mant sentences..
+               this is what i got fro the old website Team Anveshak comprises of
+               30+ enthusiastic undergraduates from different verticals of engineering
+               working towards development of a semi-autonomous vehicle capable of extreme
+               terrain traversal and scientific exploration.
+       </div>
+           </div>
+       <br>
+           <div class="row">
+<!--1st card-->
+
+           <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+            <div class="card card-flip h-100">
+                  <div class="card-front ">
+                    <div class="card-body ca">
+                    <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                            <p class="card-title"><b>{{id.name}}</b></p>
+                            <p class="card-text">{{id.position}}</p>
+                        <div id="line_r" class="line"></div>
+                            <div id="line_l" class="line"></div>
+                      </div>
+                    </div>
+                    <div class="card-back bg-white">
+                        <div class="card-body">
+                            <p class="card-title"><b>" {{id.quote}} "</b></p>
+                           <pre>                    -{{id.name}}</pre>
+                            <br>
+                            <br>
+
+                        <!--  <pre>  <p class="card-text"><b>Email:  </b>{{id.contact}}<br><b>Number:  </b>{{id.number}}</p></pre>
+--><br>
+
+<div id="accordion1">
+<!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+
+
+   <h2>
+
+    <i style="color:green" data-toggle="collapse" href="#collapseOne11" class="fa-whatsapp fa"></i>
+    <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+        <i style="color:#4da6ff"class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo12"></i>
+    <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+       <i style="color: #ff0055"class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree13"></i></h2>
+
+  <div id="collapseOne11" class="collapse ml-5" data-parent="#accordion1">
+
+        9876543210
+
+  </div>
+    <div id="collapseTwo12" class="collapse ml-5" data-parent="#accordion1">
+
+      ch19b096@smail.iitm.ac.in
+
+    </div>
+       <div id="collapseThree13" class="collapse ml-5" data-parent="#accordion1">
+
+      ferociouCentaur
+
+
+</div>
+</div>
+</div>
+                        </div>
+                    </div>
+            </div>
+
+
+
+
+
+
+        <!--2nd card-->
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+         <div class="card card-flip h-100">
+               <div class="card-front ">
+                 <div class="card-body ca">
+                 <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                         <p class="card-title"><b>{{id.name}}</b></p>
+                         <p class="card-text">{{id.position}}</p>
+                     <div id="line_r" class="line"></div>
+                         <div id="line_l" class="line"></div>
+                   </div>
+                 </div>
+                 <div class="card-back bg-white">
+                     <div class="card-body">
+                         <p class="card-title"><b>" {{id.quote}} "</b></p>
+                        <pre>                    -{{id.name}}</pre>
+                         <br>
+                         <br>
+
+                         <br>
+                         <div id="accordion2">
+                         <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                             <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne21" class="fa-whatsapp fa"></i>
+                             <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                                 <i style="color:#4da6ff"class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo22"></i>
+                             <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                                 <i style="color: #ff0055"class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree23"></i></h2>
+                           <div id="collapseOne21" class="collapse ml-5" data-parent="#accordion2">
+
+                                 9876543210
+
+                           </div>
+                             <div id="collapseTwo22" class="collapse ml-5" data-parent="#accordion2">
+
+                               ch19b096@smail.iitm.ac.in
+
+                             </div>
+                                <div id="collapseThree23" class="collapse ml-5" data-parent="#accordion2">
+
+                               ferociouCentaur
+
+
+                         </div>
+                         </div>
+
+
+
+                     </div>
+                 </div>
+         </div>
+        </div>
+
+
+    <!--3rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion3">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne31" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo32"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree33"></i></h2>
+                       <div id="collapseOne31" class="collapse ml-5" data-parent="#accordion3">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo32" class="collapse ml-5" data-parent="#accordion3">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree33" class="collapse ml-5" data-parent="#accordion3">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+    <!--4rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion4">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne41" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo42"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree43"></i></h2>
+                       <div id="collapseOne41" class="collapse ml-5" data-parent="#accordion4">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo42" class="collapse ml-5" data-parent="#accordion4">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree43" class="collapse ml-5" data-parent="#accordion4">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+    <!--5rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion5">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne51" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo52"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree53"></i></h2>
+                       <div id="collapseOne51" class="collapse ml-5" data-parent="#accordion5">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo52" class="collapse ml-5" data-parent="#accordion5">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree53" class="collapse ml-5" data-parent="#accordion5">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+    <!--6rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion6">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne61" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo62"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree63"></i></h2>
+                       <div id="collapseOne61" class="collapse ml-5" data-parent="#accordion6">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo62" class="collapse ml-5" data-parent="#accordion6">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree63" class="collapse ml-5" data-parent="#accordion6">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+    <!--7rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion7">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne71" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo72"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree73"></i></h2>
+                       <div id="collapseOne71" class="collapse ml-5" data-parent="#accordion7">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo72" class="collapse ml-5" data-parent="#accordion7">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree73" class="collapse ml-5" data-parent="#accordion7">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+    <!--8rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion8">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne81" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo82"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree83"></i></h2>
+                       <div id="collapseOne81" class="collapse ml-5" data-parent="#accordion8">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo82" class="collapse ml-5" data-parent="#accordion8">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree83" class="collapse ml-5" data-parent="#accordion8">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+    <!--9rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion9">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne91" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo92"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree93"></i></h2>
+                       <div id="collapseOne91" class="collapse ml-5" data-parent="#accordion9">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo92" class="collapse ml-5" data-parent="#accordion9">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree93" class="collapse ml-5" data-parent="#accordion9">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+
+    <!--10rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion10">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne101" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo102"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree103"></i></h2>
+                       <div id="collapseOne101" class="collapse ml-5" data-parent="#accordion10">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo102" class="collapse ml-5" data-parent="#accordion10">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree103" class="collapse ml-5" data-parent="#accordion10">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+    <!--11rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion11">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne111" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo112"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree113"></i></h2>
+                       <div id="collapseOne111" class="collapse ml-5" data-parent="#accordion11">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo112" class="collapse ml-5" data-parent="#accordion11">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree113" class="collapse ml-5" data-parent="#accordion11">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+    <!--12rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion12">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne121" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo122"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree123"></i></h2>
+                       <div id="collapseOne121" class="collapse ml-5" data-parent="#accordion12">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo122" class="collapse ml-5" data-parent="#accordion12">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree123" class="collapse ml-5" data-parent="#accordion12">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+    <!--13rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion13">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne131" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo132"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree133"></i></h2>
+                       <div id="collapseOne131" class="collapse ml-5" data-parent="#accordion13">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo132" class="collapse ml-5" data-parent="#accordion13">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree133" class="collapse ml-5" data-parent="#accordion13">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+
+
+    <!--14rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion14">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne141" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo142"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree143"></i></h2>
+                       <div id="collapseOne141" class="collapse ml-5" data-parent="#accordion14">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo142" class="collapse ml-5" data-parent="#accordion14">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree143" class="collapse ml-5" data-parent="#accordion14">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+    <!--15rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion15">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne151" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo152"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree153"></i></h2>
+                       <div id="collapseOne151" class="collapse ml-5" data-parent="#accordion15">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo152" class="collapse ml-5" data-parent="#accordion15">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree153" class="collapse ml-5" data-parent="#accordion15">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+    <!--16rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion16">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne161" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo162"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree163"></i></h2>
+                       <div id="collapseOne161" class="collapse ml-5" data-parent="#accordion16">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo162" class="collapse ml-5" data-parent="#accordion16">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree163" class="collapse ml-5" data-parent="#accordion16">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+    <!--17rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion17">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne171" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo172"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree173"></i></h2>
+                       <div id="collapseOne171" class="collapse ml-5" data-parent="#accordion17">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo172" class="collapse ml-5" data-parent="#accordion17">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree173" class="collapse ml-5" data-parent="#accordion17">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+    <!--18rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion18">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne181" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo182"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree183"></i></h2>
+                       <div id="collapseOne181" class="collapse ml-5" data-parent="#accordion18">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo182" class="collapse ml-5" data-parent="#accordion18">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree183" class="collapse ml-5" data-parent="#accordion18">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+    <!--19rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion19">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne191" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo192"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree193"></i></h2>
+                       <div id="collapseOne191" class="collapse ml-5" data-parent="#accordion19">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo192" class="collapse ml-5" data-parent="#accordion19">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree193" class="collapse ml-5" data-parent="#accordion19">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+    <!--20rd card-->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5 mt-3 ">
+     <div class="card card-flip h-100">
+           <div class="card-front ">
+             <div class="card-body ca">
+             <img class="card-img-top" src="4.jpg" alt="Card image" style="padding:10px;width:100%;height:75%">
+
+
+                     <p class="card-title"><b>{{id.name}}</b></p>
+                     <p class="card-text">{{id.position}}</p>
+                 <div id="line_r" class="line"></div>
+                     <div id="line_l" class="line"></div>
+               </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <p class="card-title"><b>" {{id.quote}} "</b></p>
+                    <pre>                    -{{id.name}}</pre>
+                     <br>
+                     <br>
+                     <br>
+
+
+                     <div id="accordion20">
+                     <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne201" class="collapsed fa-whatsapp fa"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
+                             <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo202"></i>
+                         <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree203"></i></h2>
+                       <div id="collapseOne201" class="collapse ml-5" data-parent="#accordion20">
+
+                             9876543210
+
+                       </div>
+                         <div id="collapseTwo202" class="collapse ml-5" data-parent="#accordion20">
+
+                           ch19b096@smail.iitm.ac.in
+
+                         </div>
+                            <div id="collapseThree203" class="collapse ml-5" data-parent="#accordion20">
+
+                           ferociouCentaur
+                          </div>
+                     </div>
+
+
+
+
+
+                 </div>
+             </div>
+     </div>
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+   </div>
+
+
+
+
+
+   <script>
+   $('body').css('padding-top', $('.navbar').outerHeight() + 'px')
+
+   // detect scroll top or down
+   if ($('.smart-scroll').length > 0) { // check if element exists
+       var last_scroll_top = 0;
+       $(window).on('scroll', function() {
+           scroll_top = $(this).scrollTop();
+           if(scroll_top < last_scroll_top) {
+               $('.smart-scroll').removeClass('scrolled-down').addClass('scrolled-up');
+           }
+           else {
+               $('.smart-scroll').removeClass('scrolled-up').addClass('scrolled-down');
+           }
+           last_scroll_top = scroll_top;
+       });
+   }
+
+   </script>
+</body>
+</html>

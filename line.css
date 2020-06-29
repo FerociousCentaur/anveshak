@@ -1,0 +1,34 @@
+
+.line {
+    width: 100px;
+    height: 2px;
+    background:   #b34700;
+    position: fixed;
+    top: 84%;
+}
+
+#line_r{
+  -webkit-animation: line_r_animation 3s infinite;
+  animation: line_r_animation 3s infinite;
+}
+
+#line_l{
+  -webkit-animation: line_l_animation 3s infinite;
+  animation: line_l_animation 3s infinite;
+}
+
+
+
+@keyframes line_r_animation {
+    0%   {left: calc(2% + 50px); width: 0px;}
+    35%   {left: calc(2% + 0px); width: 50px;}
+    70%   {left: calc(2% + 0px); width: 0px;}
+    100%   {left: calc(2% + 0px); width: 0px;}
+}
+
+@keyframes line_l_animation {
+    0%   {right: calc(2% + 50px); width: 0px;}
+    35%   {right: calc(2% + 0px); width: 50px;}
+    70%   {right: calc(2% + 0px); width: 0px;}
+    100%   {right: calc(2% + 0px); width: 0px;}
+}

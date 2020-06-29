@@ -1,0 +1,41 @@
+.card-flip > div {
+backface-visibility: hidden;
+transition: transform .6s;
+transition-timing-function: linear;
+width: 100%;
+height: 100%;
+margin: 0;
+display: flex;
+}
+.ca{
+padding:0px;
+text-align:center;
+}
+
+.card-front {
+transform: rotateY(0deg);
+color: #e65c00;
+background-color: #fff;
+}
+
+.card-back {
+transform: rotateY(180deg);
+position: absolute;
+top: 0;
+width: 100%;
+height: 100%;
+}
+
+.card-flip:hover .card-front {
+transform: rotateY(-180deg);
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+
+.card-flip:hover .card-back {
+transform: rotateY(0deg);
+transform: scale(1.1);
+ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.c{
+background-color: #ffb380;}

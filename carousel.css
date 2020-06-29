@@ -1,0 +1,10 @@
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+.carousel{
+interval: 2s;
+
+float:center;
+background-color: #ffb380;
+}
