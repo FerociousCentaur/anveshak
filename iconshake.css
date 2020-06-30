@@ -1,6 +1,4 @@
-.fa{
-  margin-left: 51px;
-}
+
 
 
 .fa:hover {
@@ -11,15 +9,44 @@
 
 @keyframes shake {
   10%, 90% {
-    transform: translate3d(-.9px, 0, -.50px);
+
+    transform: rotateZ(5deg);
   }
   20%, 80% {
-    transform: translate3d(.9px, 0, .50px);
+
+    transform: rotateZ(-5deg);
   }
   30%, 50%, 70% {
-    transform: translate3d(-.9px,0, -.50px);
+
+    transform: rotateZ(10deg);
   }
   40%, 60% {
-    transform: translate3d(.9px, 0, .50px);
+
+    transform: rotateZ(-10deg);
   }
+}
+
+h1{
+  font-family: Lobster;
+}
+/*@media only screen and (min-width: 600px){
+.f1{
+  float: left;
+  margin-left: 10%;
+}
+.f2{
+  float: right;
+  margin-right: 10%;
+}*/
+.f1{
+
+  margin-right: 15%;
+}
+.f2{
+
+  margin-left: 15%;
+}
+.accordion{
+text-align: center;
+
 }

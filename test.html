@@ -67,7 +67,7 @@
 }
 
 .card{
-  margin: 5%;
+
   position: relative;
 }
 
@@ -156,10 +156,7 @@ background-color: #ffb380;
 
 
 
-.fa {
 
-  margin-left: 8%;
-}
 
 
 .fa:hover {
@@ -170,22 +167,55 @@ background-color: #ffb380;
 
 @keyframes shake {
   10%, 90% {
-    transform: translate3d(-.9px, 0, -.50px);
+
+    transform: rotateZ(5deg);
   }
   20%, 80% {
-    transform: translate3d(.9px, 0, .50px);
+
+    transform: rotateZ(-5deg);
   }
   30%, 50%, 70% {
-    transform: translate3d(-.9px,0, -.50px);
+
+    transform: rotateZ(10deg);
   }
   40%, 60% {
-    transform: translate3d(.9px, 0, .50px);
+
+    transform: rotateZ(-10deg);
   }
 }
 
 h1{
   font-family: Lobster;
 }
+/*@media only screen and (min-width: 600px){
+.f1{
+  float: left;
+  margin-left: 10%;
+}
+.f2{
+  float: right;
+  margin-right: 10%;
+}*/
+.f1{
+
+  margin-right: 15%;
+}
+.f2{
+
+  margin-left: 15%;
+}
+.accordion{
+text-align: center;
+
+}
+
+
+/*@media only screen and (max-width: 600px) {
+  .fa{
+    margin-left: 30px ;
+
+  }
+}*/
 
 </style>
  </head>
@@ -401,24 +431,24 @@ h1{
                     <div class="card-back bg-white">
                         <div class="card-body">
                             <p class="card-title"><b>" {{id.quote}} "</b></p>
-                           <pre>                    -{{id.name}}</pre>
+                           <pre>                  -{{id.name}}</pre>
                             <br>
-                            <br>
+<br>
 
                         <!--  <pre>  <p class="card-text"><b>Email:  </b>{{id.contact}}<br><b>Number:  </b>{{id.number}}</p></pre>
 --><br>
 
-<div id="accordion1">
+<div id="accordion1" class="accordion" >
 <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
 
 
    <h2>
 
-    <i style="color:green" data-toggle="collapse" href="#collapseOne11" class="fa-whatsapp fa"></i>
+    <i style="color:green" data-toggle="collapse" href="#collapseOne11" class="fa-whatsapp fa f1"></i>
     <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
         <i style="color:#4da6ff"class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo12"></i>
     <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-       <i style="color: #ff0055"class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree13"></i></h2>
+       <i style="color: #ff0055"class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree13"></i></h2>
 
   <div id="collapseOne11" class="collapse ml-5" data-parent="#accordion1">
 
@@ -469,13 +499,13 @@ h1{
                          <br>
 
                          <br>
-                         <div id="accordion2">
+                         <div id="accordion2" class="accordion">
                          <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                             <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne21" class="fa-whatsapp fa"></i>
+                             <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne21" class="fa-whatsapp fa f1"></i>
                              <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                                  <i style="color:#4da6ff"class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo22"></i>
                              <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                                 <i style="color: #ff0055"class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree23"></i></h2>
+                                 <i style="color: #ff0055"class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree23"></i></h2>
                            <div id="collapseOne21" class="collapse ml-5" data-parent="#accordion2">
 
                                  9876543210
@@ -525,13 +555,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion3">
+                     <div id="accordion3" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne31" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne31" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo32"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree33"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree33"></i></h2>
                        <div id="collapseOne31" class="collapse ml-5" data-parent="#accordion3">
 
                              9876543210
@@ -580,13 +610,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion4">
+                     <div id="accordion4" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne41" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne41" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo42"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree43"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree43"></i></h2>
                        <div id="collapseOne41" class="collapse ml-5" data-parent="#accordion4">
 
                              9876543210
@@ -635,13 +665,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion5">
+                     <div id="accordion5" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne51" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne51" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo52"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree53"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree53"></i></h2>
                        <div id="collapseOne51" class="collapse ml-5" data-parent="#accordion5">
 
                              9876543210
@@ -690,13 +720,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion6">
+                     <div id="accordion6" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne61" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne61" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo62"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree63"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree63"></i></h2>
                        <div id="collapseOne61" class="collapse ml-5" data-parent="#accordion6">
 
                              9876543210
@@ -745,13 +775,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion7">
+                     <div id="accordion7" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne71" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne71" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo72"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree73"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree73"></i></h2>
                        <div id="collapseOne71" class="collapse ml-5" data-parent="#accordion7">
 
                              9876543210
@@ -800,13 +830,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion8">
+                     <div id="accordion8" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne81" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne81" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo82"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree83"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree83"></i></h2>
                        <div id="collapseOne81" class="collapse ml-5" data-parent="#accordion8">
 
                              9876543210
@@ -855,13 +885,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion9">
+                     <div id="accordion9" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne91" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne91" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo92"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree93"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree93"></i></h2>
                        <div id="collapseOne91" class="collapse ml-5" data-parent="#accordion9">
 
                              9876543210
@@ -911,13 +941,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion10">
+                     <div id="accordion10" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne101" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne101" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo102"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree103"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree103"></i></h2>
                        <div id="collapseOne101" class="collapse ml-5" data-parent="#accordion10">
 
                              9876543210
@@ -966,13 +996,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion11">
+                     <div id="accordion11" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne111" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne111" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo112"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree113"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree113"></i></h2>
                        <div id="collapseOne111" class="collapse ml-5" data-parent="#accordion11">
 
                              9876543210
@@ -1021,13 +1051,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion12">
+                     <div id="accordion12" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne121" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne121" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo122"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree123"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree123"></i></h2>
                        <div id="collapseOne121" class="collapse ml-5" data-parent="#accordion12">
 
                              9876543210
@@ -1076,13 +1106,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion13">
+                     <div id="accordion13" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne131" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne131" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo132"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree133"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree133"></i></h2>
                        <div id="collapseOne131" class="collapse ml-5" data-parent="#accordion13">
 
                              9876543210
@@ -1133,13 +1163,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion14">
+                     <div id="accordion14" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne141" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne141" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo142"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree143"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree143"></i></h2>
                        <div id="collapseOne141" class="collapse ml-5" data-parent="#accordion14">
 
                              9876543210
@@ -1188,13 +1218,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion15">
+                     <div id="accordion15" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne151" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne151" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo152"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree153"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree153"></i></h2>
                        <div id="collapseOne151" class="collapse ml-5" data-parent="#accordion15">
 
                              9876543210
@@ -1243,13 +1273,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion16">
+                     <div id="accordion16" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne161" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne161" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo162"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree163"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree163"></i></h2>
                        <div id="collapseOne161" class="collapse ml-5" data-parent="#accordion16">
 
                              9876543210
@@ -1298,13 +1328,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion17">
+                     <div id="accordion17" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne171" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne171" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo172"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree173"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree173"></i></h2>
                        <div id="collapseOne171" class="collapse ml-5" data-parent="#accordion17">
 
                              9876543210
@@ -1353,13 +1383,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion18">
+                     <div id="accordion18" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne181" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne181" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo182"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree183"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree183"></i></h2>
                        <div id="collapseOne181" class="collapse ml-5" data-parent="#accordion18">
 
                              9876543210
@@ -1408,13 +1438,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion19">
+                     <div id="accordion19" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne191" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne191" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo192"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree193"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree193"></i></h2>
                        <div id="collapseOne191" class="collapse ml-5" data-parent="#accordion19">
 
                              9876543210
@@ -1463,13 +1493,13 @@ h1{
                      <br>
 
 
-                     <div id="accordion20">
+                     <div id="accordion20" class="accordion">
                      <!--<button data-toggle="collapse" href="#collapseOne"></button>-->
-                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne201" class="collapsed fa-whatsapp fa"></i>
+                         <h2>  <i style="color:green" data-toggle="collapse" href="#collapseOne201" class="collapsed fa-whatsapp fa f1"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"></button>-->
                              <i style="color:#4da6ff" class=" collapsed fa-envelope fa" data-toggle="collapse" href="#collapseTwo202"></i>
                          <!--  <button class="collapsed card-link" data-toggle="collapse" href="#collapseThree">   </button>-->
-                             <i style="color: #ff0055" class="collapsed fa-instagram fa" data-toggle="collapse" href="#collapseThree203"></i></h2>
+                             <i style="color: #ff0055" class="collapsed fa-instagram fa f2" data-toggle="collapse" href="#collapseThree203"></i></h2>
                        <div id="collapseOne201" class="collapse ml-5" data-parent="#accordion20">
 
                              9876543210

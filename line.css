@@ -1,10 +1,11 @@
 
+
 .line {
     width: 100px;
     height: 2px;
     background:   #b34700;
     position: fixed;
-    top: 84%;
+    top: 86%;
 }
 
 #line_r{
